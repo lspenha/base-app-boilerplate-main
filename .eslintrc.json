@@ -1,0 +1,99 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@next/next/recommended",
+    "prettier",
+    "next/core-web-vitals"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "eslint-plugin-import-helpers"],
+  "rules": {
+    "@next/next/no-img-element": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "ignoreRestSiblings": true
+      }
+    ],
+    "camelcase": "off",
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          "/react$/",
+          "/^react/",
+          "/^next/",
+          "/^@emotion/",
+          "/^@mui/",
+          "/^axios/",
+          "/^react-toastify/",
+          "/^date-fns/",
+          "/^faker/",
+          "/^formik/",
+          "/^jwt-decode/",
+          "/^lodash/",
+          "/^query-string/",
+          "/^uuid/",
+          "/^yup/",
+          "/^@services/",
+          "/^@context/",
+          "/^@hooks/",
+          "/^@components/",
+          "/^@utils/",
+          "/^@public/",
+          "/^@styles/",
+          "/^@types/",
+          ["parent", "sibling", "index"]
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "ignoreCase": true
+        }
+      }
+    ],
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["hrefLeft", "hrefRight"],
+        "aspects": ["invalidHref", "preferButton"]
+      }
+    ],
+    "no-console": [
+      "warn",
+      {
+        "allow": ["error"]
+      }
+    ],
+    "no-alert": "error",
+    "no-use-before-define": "off",
+    "react/prop-types": "off",
+    "react/self-closing-comp": [
+      "error",
+      {
+        "component": true,
+        "html": true
+      }
+    ],
+    "react-hooks/exhaustive-deps": "warn",
+    "react/display-name": "off",
+    "prettier/prettier": ["error"]
+  }
+}
